@@ -1,0 +1,17 @@
+
+line {
+    stroke: white;    
+    stroke-width: 40;
+}
+
+rect {
+    fill: white;
+}
+
+circle {
+    fill: rgb(5, 5, 58);
+}
+
+polygon {
+    fill: white;
+}
