@@ -1,0 +1,17 @@
+table {
+    font-size: 25px;
+    padding: 10px;
+}
+
+td.category {
+    width: 250px;
+    text-align: right;
+}
+
+.button {
+    font-size: 20px;
+}
+
+select {
+    font-size: 20px;
+}
