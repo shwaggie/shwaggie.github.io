@@ -1,6 +1,5 @@
 table {
     font-size: 25px;
-    padding: 10px;
 }
 
 td.category {
@@ -14,4 +13,12 @@ td.category {
 
 select {
     font-size: 20px;
+}
+
+span.invalid {
+    color: orange;
+}
+
+span.empty {
+    color: red;
 }

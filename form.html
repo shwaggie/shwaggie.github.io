@@ -5,18 +5,18 @@
         <link rel="stylesheet" href="form.css">
     </head>
     <body>
-        <form name="myForm">
+        <form id="myForm" name="myForm">
             <table>
                 <tr>
                     <td class="category"><label for="username">Username:</label></td>
                     <td class="fields"><input type="text" id="username" name="username" maxlength="12"><br></td>
                 </tr>
                 <tr>
-                    <td class="category"><label for="emaik">Email:</label></td>
+                    <td class="category"><label for="email">Email:</label></td>
                     <td><input type="text" id="email" name="email"><br></td>
                 </tr>
                 <tr>
-                    <td class="category"><label for="phone">Phone number:</label></td>
+                    <td class="category"><label for="phone">Phone Number:</label></td>
                     <td><input type="text" id="phone" name="phone"><br></td>
                 </tr>
                 <tr>
@@ -147,10 +147,14 @@
                 <tr><td></td>
                     <td>
                         <input type="button" class="button" onclick="submitForm()" id="sub" value="submit">                        
-                        <input type="button" class="button" onclick="" id="clear" value="clear">
+                        <input type="reset" class="button" onclick="clearForm(true)" id="clear" value="clear">
                     </td>
                 </tr>
-            </table>
+                <tr><td></td>
+                <td>
+                    <div id="messager"></div>
+                </td></tr>
+            </table><br><br>
         </form>
     </body>
 </html>
