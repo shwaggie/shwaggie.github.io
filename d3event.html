@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+    </head>
+    <body>
+        <script type="text/javascript">
+            let span = d3.select("body").append("span");
+
+            let imgs = span.selectAll("img").data([0]);
+            imgs.enter()
+                .append("svg:img")
+                .attr("xlink:href", "/tiktok.png")
+                .attr("width","100")
+                .attr("height", "20");
+
+            let div1 = d3.select("body").append("div");
+            let div2 = d3.select("body").append("div");
+            let div3 = d3.select("body").append("div");
+        </script>
+    </body>
+</html>
