@@ -2,21 +2,111 @@
 <html>
     <head>
         <script src="https://d3js.org/d3.v7.min.js"></script>
+        <style>
+            div {
+                font-size: 30px;
+            }
+        </style>
     </head>
     <body>
         <script type="text/javascript">
-            let span = d3.select("body").append("span");
+            let span = d3.select('body')
+                .append("span")
+                .html('<img src="tiktok.png" name="TikTok" id="tiktok">' + 
+                      '<img src="facebook.png" name="Facebook" id="facebook">' + 
+                      '<img src="snapchat.png" name="Snapchat" id="snapchat">' + 
+                      '<img src="youtube.png" name="YouTube" id="youtube">' + 
+                      '<img src="instagram.png" name="Instagram" id="instagram">')
+                .on("mousemove", e => {
+                    let coords = d3.pointer(e);
+                    d3.select('#Mouse').html("Mouse X: " + Math.abs(Math.floor(coords[0])) + ", Mouse Y: " + Math.abs(Math.floor(coords[1])))});
 
-            let imgs = span.selectAll("img").data([0]);
-            imgs.enter()
-                .append("svg:img")
-                .attr("xlink:href", "/tiktok.png")
-                .attr("width","100")
-                .attr("height", "20");
-
-            let div1 = d3.select("body").append("div");
-            let div2 = d3.select("body").append("div");
-            let div3 = d3.select("body").append("div");
+            let div1 = d3.select('body').append('div')
+                .attr("font-size", "20px")
+                .attr("id", "In")
+                .html("In: ");
+            let div2 = d3.select('body').append('div')
+                .attr("id", "Out")
+                .html("Out: ");
+            let div3 = d3.select('body').append('div')
+                .attr("id", "Mouse")
+                .html("Mouse X:   , Mouse Y:   ");
+            
+            let tiktok = d3.select('#tiktok')
+                .attr("width", "100")
+                .attr("height", "100")               
+                .on("mouseover", function(){d3.select('#In').html("In: " + tiktok.attr("name"))})
+                .on("mouseout", function(){d3.select('#Out').html("Out: " + tiktok.attr("name"))})
+                .on("dblclick", function(){window.open("http://tiktok.com", '_blank')})
+                .on("mouseenter", function(){
+                    let angle = ((Number(tiktok.style("transform").slice(7, -4))) + 90) % 360;
+                    tiktok.style("transform", "rotate(" + angle + "deg)");
+                })
+                .on("mouseleave", function(){
+                    let angle = ((Number(tiktok.style("transform").slice(7, -4))) + 90) % 360;
+                    tiktok.style("transform", "rotate(" + angle + "deg)");
+                });
+            
+            let facebook = d3.select('#facebook')
+                .attr("width", "100")
+                .attr("height", "100")   
+                .on("mouseover", function(){d3.select('#In').html("In: " + facebook.attr("name"))})
+                .on("mouseout", function(){d3.select('#Out').html("Out: " + facebook.attr("name"))})
+                .on("dblclick", function(){window.open("http://facebook.com", '_blank')})
+                .on("mouseenter", function(){
+                    let angle = ((Number(facebook.style("transform").slice(7, -4))) + 90) % 360;
+                    facebook.style("transform", "rotate(" + angle + "deg)");
+                })
+                .on("mouseleave", function(){
+                    let angle = ((Number(facebook.style("transform").slice(7, -4))) + 90) % 360;
+                    facebook.style("transform", "rotate(" + angle + "deg)");
+                });
+            
+            let snapchat = d3.select('#snapchat')
+                .attr("width", "100")
+                .attr("height", "100")   
+                .on("mouseover", function(){d3.select('#In').html("In: " + snapchat.attr("name"))})
+                .on("mouseout", function(){d3.select('#Out').html("Out: " + snapchat.attr("name"))})
+                .on("dblclick", function(){window.open("http://snapchat.com", '_blank')})
+                .on("mouseenter", function(){
+                    let angle = ((Number(snapchat.style("transform").slice(7, -4))) + 90) % 360;
+                    snapchat.style("transform", "rotate(" + angle + "deg)");
+                })
+                .on("mouseleave", function(){
+                    let angle = ((Number(snapchat.style("transform").slice(7, -4))) + 90) % 360;
+                    snapchat.style("transform", "rotate(" + angle + "deg)");
+                });
+            
+            let youtube = d3.select('#youtube')
+                .attr("width", "100")
+                .attr("height", "100")   
+                .on("mouseover", function(){d3.select('#In').html("In: " + youtube.attr("name"))})
+                .on("mouseout", function(){d3.select('#Out').html("Out: " + youtube.attr("name"))})
+                .on("dblclick", function(){window.open("http://youtube.com", '_blank')})
+                .on("mouseenter", function(){
+                    let angle = ((Number(youtube.style("transform").slice(7, -4))) + 90) % 360;
+                    youtube.style("transform", "rotate(" + angle + "deg)");
+                })
+                .on("mouseleave", function(){
+                    let angle = ((Number(youtube.style("transform").slice(7, -4))) + 90) % 360;
+                    youtube.style("transform", "rotate(" + angle + "deg)");
+                });
+            
+            let instagram = d3.select('#instagram')
+                .attr("width", "100")
+                .attr("height", "100")   
+                .on("mouseover", function(){d3.select('#In').html("In: " + instagram.attr("name"))})
+                .on("mouseout", function(){d3.select('#Out').html("Out: " + instagram.attr("name"))})
+                .on("dblclick", function(){window.open("http://instagram.com", '_blank')})
+                .on("mouseenter", function(){
+                    let angle = ((Number(instagram.style("transform").slice(7, -4))) + 90) % 360;
+                    instagram.style("transform", "rotate(" + angle + "deg)");
+                })
+                .on("mouseleave", function(){
+                    let angle = ((Number(instagram.style("transform").slice(7, -4))) + 90) % 360;
+                    instagram.style("transform", "rotate(" + angle + "deg)");
+                });
+            
         </script>
     </body>
 </html>

@@ -55,10 +55,7 @@ function validateForm() {
         else {
             window.location.href = '../';
         }
-    }
-
-
-    
+    }    
 }
 
 function validateUsername(username) {
